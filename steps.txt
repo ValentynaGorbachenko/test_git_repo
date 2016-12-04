@@ -228,4 +228,71 @@ Total 6 (delta 0), reused 0 (delta 0)
 To https://github.com/ValentynaGorbachenko/test_git_repo.git
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
+Valentynka (master) test_git_repo $ vi test_folder/test_file.txt 
+Valentynka (master *) test_git_repo $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   test_folder/test_file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Valentynka (master *) test_git_repo $ git add .
+Valentynka (master +) test_git_repo $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   test_folder/test_file.txt
+
+Valentynka (master +) test_git_repo $ vi test_folder/test_file.txt 
+
+[No write since last change]
+/bin/bash: q: command not found
+
+shell returned 127
+
+Press ENTER or type command to continue
+[No write since last change]
+/bin/bash: q: command not found
+
+shell returned 127
+
+Press ENTER or type command to continue
+Valentynka (master +) test_git_repo $ subl .
+Valentynka (master +) test_git_repo $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   test_folder/test_file.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   steps.txt
+	modified:   test_folder/test_file.txt
+
+Valentynka (master *+) test_git_repo $ git add .
+Valentynka (master +) test_git_repo $ git commit -m "update steps.txt and test_file.txt"
+[master 063a345] update steps.txt and test_file.txt
+ 2 files changed, 231 insertions(+)
+Valentynka (master) test_git_repo $ git push -u origin master
+Counting objects: 5, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 1.74 KiB | 0 bytes/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To https://github.com/ValentynaGorbachenko/test_git_repo.git
+   e1191c5..063a345  master -> master
+Branch master set up to track remote branch master from origin.
+Valentynka (master) test_git_repo $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working tree clean
 
