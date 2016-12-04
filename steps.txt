@@ -1,1 +1,231 @@
 my steps:
+
+Valentynka CodingDojo $ mkdir test_git_repo
+Valentynka CodingDojo $ cd test_git_repo/
+Valentynka test_git_repo $ echo "#test git repo" >> README.md
+Valentynka test_git_repo $ touch steps.txt
+Valentynka test_git_repo $ vi steps.txt 
+Valentynka test_git_repo $ ls
+README.md	steps.txt
+Valentynka test_git_repo $ ls -a
+.		..		README.md	steps.txt
+Valentynka test_git_repo $ git init
+Initialized empty Git repository in /Users/Valentynka/CodingDojo/test_git_repo/.git/
+Valentynka (master #) test_git_repo $ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+Did you mean this?
+	status
+Valentynka (master #) test_git_repo $ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	README.md
+	steps.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+Valentynka (master #) test_git_repo $ git add README.md steps.txt
+Valentynka (master #) test_git_repo $ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   README.md
+	new file:   steps.txt
+
+Valentynka (master #) test_git_repo $ mkdir test_folder
+Valentynka (master #) test_git_repo $ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   README.md
+	new file:   steps.txt
+
+Valentynka (master #) test_git_repo $ touch test_folder/test_file.txt
+Valentynka (master #) test_git_repo $ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   README.md
+	new file:   steps.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	test_folder/
+
+Valentynka (master #) test_git_repo $ git add test_folder/*
+Valentynka (master #) test_git_repo $ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   README.md
+	new file:   steps.txt
+	new file:   test_folder/test_file.txt
+
+Valentynka (master #) test_git_repo $ git log
+fatal: your current branch 'master' does not have any commits yet
+Valentynka (master #) test_git_repo $ git satus
+git: 'satus' is not a git command. See 'git --help'.
+
+Did you mean this?
+	status
+Valentynka (master #) test_git_repo $ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   README.md
+	new file:   steps.txt
+	new file:   test_folder/test_file.txt
+
+Valentynka (master #) test_git_repo $ git commit -m"initial commit"
+[master (root-commit) e1191c5] initial commit
+ 3 files changed, 2 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 steps.txt
+ create mode 100644 test_folder/test_file.txt
+Valentynka (master) test_git_repo $ git status
+On branch master
+nothing to commit, working tree clean
+Valentynka (master) test_git_repo $ git remote
+Valentynka (master) test_git_repo $ git remote add eileen https://github.com/CodingDojoOnline-Dec2016/Eileen.git
+Valentynka (master) test_git_repo $ git remote
+eileen
+Valentynka (master) test_git_repo $ ls -lah
+total 16
+drwxr-xr-x   6 Valentynka  staff   204B Dec  4 12:46 .
+drwxr-xr-x  30 Valentynka  staff   1.0K Dec  4 12:34 ..
+drwxr-xr-x  13 Valentynka  staff   442B Dec  4 12:55 .git
+-rw-r--r--   1 Valentynka  staff    15B Dec  4 12:43 README.md
+-rw-r--r--   1 Valentynka  staff    10B Dec  4 12:45 steps.txt
+drwxr-xr-x   3 Valentynka  staff   102B Dec  4 12:47 test_folder
+Valentynka (master) test_git_repo $ ls -a
+.		.git		steps.txt
+..		README.md	test_folder
+Valentynka (master) test_git_repo $ git branch
+* master
+Valentynka (master) test_git_repo $ git remote
+eileen
+Valentynka (master) test_git_repo $ ls 
+README.md	steps.txt	test_folder
+Valentynka (master) test_git_repo $ ls test_folder/test_file.txt 
+test_folder/test_file.txt
+Valentynka (master) test_git_repo $ git push eileen master
+remote: Permission to CodingDojoOnline-Dec2016/Eileen.git denied to ValentynaGorbachenko.
+fatal: unable to access 'https://github.com/CodingDojoOnline-Dec2016/Eileen.git/': The requested URL returned error: 403
+Valentynka (master) test_git_repo $ git remote -v
+eileen	https://github.com/CodingDojoOnline-Dec2016/Eileen.git (fetch)
+eileen	https://github.com/CodingDojoOnline-Dec2016/Eileen.git (push)
+Valentynka (master) test_git_repo $ git remote rm eileen
+Valentynka (master) test_git_repo $ git remote
+Valentynka (master) test_git_repo $ git remote add origin https://github.com/ValentynaGorbachenko/test_git_repo.git
+Valentynka (master) test_git_repo $ git push -u origin master
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 389 bytes | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To https://github.com/ValentynaGorbachenko/test_git_repo.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+Valentynka (master) test_git_repo $ vi test_folder/test_file.txt 
+Valentynka (master *) test_git_repo $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   test_folder/test_file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Valentynka (master *) test_git_repo $ git add .
+Valentynka (master +) test_git_repo $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   test_folder/test_file.txt
+
+Valentynka (master +) test_git_repo $ vi test_folder/test_file.txt 
+
+
+        new file:   README.md
+        new file:   steps.txt
+        new file:   test_folder/test_file.txt
+
+Valentynka (master #) test_git_repo $ git commit -m"initial commit"
+[master (root-commit) e1191c5] initial commit
+ 3 files changed, 2 insertions(+)
+ create mode 100644 README.md
+ create mode 100644 steps.txt
+ create mode 100644 test_folder/test_file.txt
+Valentynka (master) test_git_repo $ git status
+On branch master
+nothing to commit, working tree clean
+Valentynka (master) test_git_repo $ git remote
+Valentynka (master) test_git_repo $ git remote add eileen https://github.com/CodingDojoOnline-Dec2016/Eileen.git
+Valentynka (master) test_git_repo $ git remote
+eileen
+Valentynka (master) test_git_repo $ ls -lah
+total 16
+drwxr-xr-x   6 Valentynka  staff   204B Dec  4 12:46 .
+drwxr-xr-x  30 Valentynka  staff   1.0K Dec  4 12:34 ..
+drwxr-xr-x  13 Valentynka  staff   442B Dec  4 12:55 .git
+-rw-r--r--   1 Valentynka  staff    15B Dec  4 12:43 README.md
+-rw-r--r--   1 Valentynka  staff    10B Dec  4 12:45 steps.txt
+drwxr-xr-x   3 Valentynka  staff   102B Dec  4 12:47 test_folder
+Valentynka (master) test_git_repo $ ls -a
+.               .git            steps.txt
+..              README.md       test_folder
+Valentynka (master) test_git_repo $ git branch
+* master
+Valentynka (master) test_git_repo $ git remote
+eileen
+Valentynka (master) test_git_repo $ ls
+README.md       steps.txt       test_folder
+Valentynka (master) test_git_repo $ ls test_folder/test_file.txt
+test_folder/test_file.txt
+Valentynka (master) test_git_repo $ git push eileen master
+remote: Permission to CodingDojoOnline-Dec2016/Eileen.git denied to ValentynaGorbachenko.
+fatal: unable to access 'https://github.com/CodingDojoOnline-Dec2016/Eileen.git/': The requested URL returned error: 403
+Valentynka (master) test_git_repo $ git remote -v
+eileen  https://github.com/CodingDojoOnline-Dec2016/Eileen.git (fetch)
+eileen  https://github.com/CodingDojoOnline-Dec2016/Eileen.git (push)
+Valentynka (master) test_git_repo $ git remote rm eileen
+Valentynka (master) test_git_repo $ git remote
+Valentynka (master) test_git_repo $ git remote add origin https://github.com/ValentynaGorbachenko/test_git_repo.git
+Valentynka (master) test_git_repo $ git push -u origin master
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (6/6), 389 bytes | 0 bytes/s, done.
+Total 6 (delta 0), reused 0 (delta 0)
+To https://github.com/ValentynaGorbachenko/test_git_repo.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+
